@@ -1,0 +1,1 @@
+schtasks /create /sc ONSTART /tn 'Start WSL ssh' /mo ONSTART %1\start-ssh.bat
