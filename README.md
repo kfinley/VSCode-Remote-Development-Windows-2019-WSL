@@ -81,3 +81,6 @@ Copy key to server
 
 Conect over to server
 `ssh ubuntu@ec2 dns name or ip address>`
+
+## Sources
+Taken mostly from 3 part series https://www.designmind.com/cloud-computing/setting-up-a-remote-development-environment with additional moodifications from MS online documentation.
