@@ -11,7 +11,7 @@ IF "%1"=="4.7.2" (
     ndp472-kb4054530-x86-x64-allos-enu.exe /q /norestart /ChainingPackage
 
     echo 'Installing .NET Framework 4.7.2 Dev Pack'
-    curl -SL --output ndp472-devpack-enu.exe https://download.visualstudio.m`icrosoft.com/download/pr/158dce74-251c-4af3-b8cc-4608621341c8/9c1e178a11f55478e2112714a3897c1a/ndp472-devpack-enu.exe
+    curl -SL --output ndp472-devpack-enu.exe https://download.visualstudio.microsoft.com/download/pr/158dce74-251c-4af3-b8cc-4608621341c8/9c1e178a11f55478e2112714a3897c1a/ndp472-devpack-enu.exe
     ndp472-devpack-enu.exe /install /quiet /norestart
 
 ) ELSE (
