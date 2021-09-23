@@ -43,6 +43,11 @@ PasswordAuthentication yes # for testing..
 AllowAgentForwarding yes
 ```
 
+### Configure WSL path
+Update ssh user `.bashrc` file and add:
+```
+export PATH="$PATH:/mnt/c/windows/system32:/mnt/c/Program Files (x86)/nuget:/mnt/c/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin
+```
 ## In Windows Command Shell
 
 ### Create Startup Task
