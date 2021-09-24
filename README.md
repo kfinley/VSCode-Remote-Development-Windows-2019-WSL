@@ -156,4 +156,6 @@ https://www.designmind.com/cloud-computing/setting-up-a-remote-development-envir
 
 https://blog.wildernesslabs.co/work-on-meadow-using-visual-studio-code/
 
+https://stackoverflow.com/questions/47707095/visual-studio-code-for-net-framework
+
 MS online documentation
