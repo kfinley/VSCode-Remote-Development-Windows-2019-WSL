@@ -66,9 +66,28 @@ Add `Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll` to the GAC.
 gacutil /i "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\PublicAssemblies\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll" /f
 ```
 
-## Mono
+## Install Mono in WSL
 
-Install mono-complete on WSL
+```
+# Not sure if these need to be done
+sudo apt remove gpg
+sudo apt autoremove --purge -y
+sudo apt install gnupg1
+
+# required install
+sudo apt-get install software-properties-common
+
+# Install mono
+curl -sSL 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF' | sudo apt-key add
+
+echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+sudo apt update
+
+sudo apt install mono-complete
+```
+
+Add to local vscode settings
+"omnisharp.useGlobalMono": "always"
 
 ## In Windows Command Shell
 
@@ -127,6 +146,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 ```
 
 Add `zsh` to .bashrc
+
+Move `export PATH=` from .bashrc to .zshrc
 
 ## Sources
 Taken mostly from 3 part series https://www.designmind.com/cloud-computing/setting-up-a-remote-development-environment with additional moodifications from MS online documentation.
