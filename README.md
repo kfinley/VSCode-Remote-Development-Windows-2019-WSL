@@ -149,6 +149,38 @@ Add `zsh` to .bashrc
 
 Move `export PATH=` from .bashrc to .zshrc
 
+## Working with .NET Framework xUnit Test projects
+
+Install .net core 5.0
+```
+curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin  -c 5.0
+```
+
+## Create network between Windows VM (VirtualBox) and Host (Mac)
+Follow VirtualBox instructions on http://pinter.org/archives/7719.
+Make sure the network adapter that is set to NAT has port 22 open for SSH.
+## Install SQL Server ODBC Drivers in WSL
+
+curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
+
+curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
+
+sudo apt-get update
+sudo ACCEPT_EULA=Y apt-get install -y msodbcsql17
+# optional: for bcp and sqlcmd
+sudo ACCEPT_EULA=Y apt-get install -y mssql-tools
+echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+source ~/.bashrc
+
+## Install SQL Server ODBC Driver on macOS
+
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+brew tap microsoft/mssql-release https://github.com/Microsoft/homebrew-mssql-release
+brew update
+HOMEBREW_NO_ENV_FILTERING=1 ACCEPT_EULA=Y brew install msodbcsql17 mssql-tools
+```
+
 ## Sources
 https://www.coderedcorp.com/blog/using-vs-code-with-a-legacy-net-project/
 
@@ -159,3 +191,6 @@ https://blog.wildernesslabs.co/work-on-meadow-using-visual-studio-code/
 https://stackoverflow.com/questions/47707095/visual-studio-code-for-net-framework
 
 MS online documentation
+https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15#ubuntu17
+
+https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/install-microsoft-odbc-driver-sql-server-macos?view=sql-server-ver15
